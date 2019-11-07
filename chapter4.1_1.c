@@ -11,6 +11,7 @@ int main(int argc, char const *argv[])
 	printf("start\n");
 	a = getline2(line, MAXLINE);
 	printf("%d\n", a);
+	printf("%s\n", line);
 	return 0;
 }
 
@@ -18,9 +19,9 @@ int main(int argc, char const *argv[])
 int getline2(char s[], int lim){
 	int c, i;
 	i=0;
-	while(--lim>0 && (c=getchar())!=EOF && c != '\n' && c !='a')
-		printf("%c\n", c);
-		s[i++] = c;
+	while(--lim>0 && (c=getchar())!=EOF && c != '\n'){
+		s[i++] = c;		
+	}
 	if(c=='\n')
 		s[i++]=c;
 	s[i]='\0';
